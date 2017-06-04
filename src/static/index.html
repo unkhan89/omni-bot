@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="static/jquery-1.11.2.min.js"></script>
+
+<style type="text/css">
+  	body 
+  	{
+    	text-align: center;
+    }
+</style>
+    	
+<script>
+
+var doHttpGet = function(url) {	
+	//console.log("doHttpGet() url = '" + url + "'");  
+	$.get("/" + url, function(result) {
+		console.log("GET /" + url + "  =>  " + result);
+	});
+};
+
+
+</script>
+</head>
+<body>
+
+	<h3>Applications</h3>
+	Ball Tracker
+	<button onClick="doHttpGet('start?app=ball_tracker&mode=follow')">Follow</button>
+	<button onClick="doHttpGet('start?app=ball_tracker&mode=track')">Track</button>
+	<!--<select>
+    	<option value="green">Green</option>
+  		<option value="blue">Blue</option>
+		<option value="yellow">Yellow</option>  		
+	</select>--> 
+	<button onClick="doHttpGet('stop?app=ball_tracker')">Stop</button>
+	<br/>
+	
+	<h3>D-Pad</h3>
+	<button onClick="doHttpGet('move?direction=forward')">Forward</button>
+	<br/>
+	<button onClick="doHttpGet('move?direction=left')"> <- Left </button>
+	<button onClick="doHttpGet('move?direction=stop')">STOP</button>
+	<button onClick="doHttpGet('move?direction=right')"> Right -> </button>
+	<br/>
+	<button onClick="doHttpGet('move?direction=backward')">Backwards</button>
+	<br/>
+
+	<h3>Platform Rotation</h3>
+	<button onClick="doHttpGet('rotate?direction=counter_clockwise')">Counter Clock Wise</button>
+	<button onClick="doHttpGet('rotate?direction=stop')">STOP</button>	
+	<button onClick="doHttpGet('rotate?direction=clockwise')">Clock Wise</button>
+
+	<h3>Individual Rotation</h3>
+	Servo 1 :
+	<button onClick="doHttpGet('rotateservo?servo=1&direction=counter_clockwise')">Counter Clock Wise</button>
+	<button onClick="doHttpGet('rotateservo?servo=1&direction=idle')">Idle</button>
+	<button onClick="doHttpGet('rotateservo?servo=1&direction=clockwise')">Clock Wise</button>
+	<br/>
+	Servo 2 : 
+	<button onClick="doHttpGet('rotateservo?servo=2&direction=counter_clockwise')">Counter Clock Wise</button>
+	<button onClick="doHttpGet('rotateservo?servo=2&direction=idle')">Idle</button>
+	<button onClick="doHttpGet('rotateservo?servo=2&direction=clockwise')">Clock Wise</button>
+	<br/>
+	Servo 3 : 
+	<button onClick="doHttpGet('rotateservo?servo=3&direction=counter_clockwise')">Counter Clock Wise</button>
+	<button onClick="doHttpGet('rotateservo?servo=3&direction=idle')">Idle</button>
+	<button onClick="doHttpGet('rotateservo?servo=3&direction=clockwise')">Clock Wise</button>
+	<br/>	
+	Servo 4 : 
+	<button onClick="doHttpGet('rotateservo?servo=4&direction=counter_clockwise')">Counter Clock Wise</button>
+	<button onClick="doHttpGet('rotateservo?servo=4&direction=idle')">Idle</button>
+	<button onClick="doHttpGet('rotateservo?servo=4&direction=clockwise')">Clock Wise</button>
+	
+</body>
+</html>
+

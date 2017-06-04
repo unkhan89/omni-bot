@@ -1,0 +1,10 @@
+
+Python Packages Required
+	sudo apt-get install python-pygame
+	sudo pip install pyserial
+	sudo pip install flask
+	
+
+	
+	
+
